@@ -20,10 +20,6 @@
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
-    <!--    Define dependency-->
-    <!--    <bean id="myFortuneService"-->
-    <!--          class="com.dagoromer.springdemo.utils.RandomFortuneService">-->
-
 </beans>
 
 
