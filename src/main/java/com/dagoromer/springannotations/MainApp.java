@@ -1,7 +1,6 @@
 package com.dagoromer.springannotations;
 
 import com.dagoromer.springannotations.coaches.Coach;
-import com.dagoromer.springannotations.coaches.TennisCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
@@ -12,6 +11,7 @@ public class MainApp {
         Coach theCoach = context.getBean("tennisCoach", Coach.class);
 
         System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getDailyFortune());
         System.out.println(theCoach);
 
         context.close();
