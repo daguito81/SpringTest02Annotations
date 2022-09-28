@@ -5,7 +5,6 @@ import com.dagoromer.springannotations.utils.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Random;
 
 // You can leave @Component blank and the default name will be the class name with first letter lowered
 // Or you can specify the name explicitly
