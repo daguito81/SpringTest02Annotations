@@ -12,6 +12,7 @@ public class MainApp {
 
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getDailyMessage());
         System.out.println(theCoach);
 
         context.close();

@@ -13,4 +13,9 @@ public class BaseballCoach implements Coach{
     public String getDailyFortune() {
         return null;
     }
+
+    @Override
+    public String getDailyMessage() {
+        return null;
+    }
 }
