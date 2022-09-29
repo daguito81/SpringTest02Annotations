@@ -5,6 +5,7 @@ import com.dagoromer.springannotations.utils.MessageService;
 import com.dagoromer.springannotations.utils.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
@@ -19,10 +20,21 @@ public class TennisCoach implements Coach {
     @Autowired // Field Injector
     private MessageService messageService;
 
+    @Value("${prop.email}")
+    public void setCoachEmail(String coachEmail) {
+        this.coachEmail = coachEmail;
+    }
 
+    @Value("${prop.team}")
+    public void setCoachTeam(String coachTeam) {
+        this.coachTeam = coachTeam;
+    }
+
+    // Setting up properties from a file
+    private String coachEmail;
+    private String coachTeam;
     @Autowired //Setter Injector
     public void setWorkoutService(WorkoutService workoutService) {
-        System.out.println("Inside the Setter");
         this.workoutService = workoutService;
     }
 
@@ -30,7 +42,6 @@ public class TennisCoach implements Coach {
 
     @Autowired // Constructor Injector
     public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
-        System.out.println("Inside the Constructor");
         this.fortuneService = theFortuneService;
     }
 
@@ -47,5 +58,13 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getDailyFortune();
+    }
+
+    @Override
+    public String toString() {
+        return "TennisCoach{" +
+                "coachEmail='" + coachEmail + '\'' +
+                ", coachTeam='" + coachTeam + '\'' +
+                '}';
     }
 }

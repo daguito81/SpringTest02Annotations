@@ -8,17 +8,20 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--    Set up properties file as context-->
-<!--    <context:property-placeholder location="sport.properties"/>-->
+    <!--    <context:property-placeholder location="sport.properties"/>-->
 
     <!--    Set up Annotations-->
     <context:component-scan base-package="com.dagoromer.springannotations"/>
+    <!--    Set up Properties File-->
+    <context:property-placeholder location="sport.properties"/>
+
     <!-- Define your beans here -->
-    <bean id="myLoggerConfig"
-          class="com.dagoromer.springannotations.MyLoggerConfig"
-          init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE"/>
-        <property name="printedLoggerLevel" value="FINE"/>
-    </bean>
+<!--    <bean id="myLoggerConfig"-->
+<!--          class="com.dagoromer.springannotations.MyLoggerConfig"-->
+<!--          init-method="initLogger">-->
+<!--        <property name="rootLoggerLevel" value="FINE"/>-->
+<!--        <property name="printedLoggerLevel" value="FINE"/>-->
+<!--    </bean>-->
 
 </beans>
 
