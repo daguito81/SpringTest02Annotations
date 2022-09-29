@@ -1,9 +1,9 @@
 package com.dagoromer.springannotations.coaches;
 
 public interface Coach {
-    public String getDailyWorkout();
+    String getDailyWorkout();
 
-    public String getDailyFortune();
+    String getDailyFortune();
 
-    public String getDailyMessage();
+    String getDailyMessage();
 }

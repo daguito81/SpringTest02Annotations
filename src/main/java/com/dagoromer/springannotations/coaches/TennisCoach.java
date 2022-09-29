@@ -4,6 +4,7 @@ import com.dagoromer.springannotations.utils.FortuneService;
 import com.dagoromer.springannotations.utils.MessageService;
 import com.dagoromer.springannotations.utils.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
@@ -14,6 +15,7 @@ public class TennisCoach implements Coach {
     // This dependency will be autowired from a @Component that implements FortuneService
     private final FortuneService fortuneService;
 
+    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
     @Autowired // Field Injector
     private MessageService messageService;
 
@@ -27,7 +29,7 @@ public class TennisCoach implements Coach {
     private WorkoutService workoutService;
 
     @Autowired // Constructor Injector
-    public TennisCoach(FortuneService theFortuneService) {
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
         System.out.println("Inside the Constructor");
         this.fortuneService = theFortuneService;
     }
