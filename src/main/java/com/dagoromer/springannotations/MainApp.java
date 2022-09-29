@@ -9,11 +9,13 @@ public class MainApp {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         Coach theCoach = context.getBean("tennisCoach", Coach.class);
+        Coach assistantCoach = context.getBean("tennisCoach", Coach.class);
 
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
         System.out.println(theCoach.getDailyMessage());
-        System.out.println(theCoach);
+        System.out.println("Coaches are same: " + (theCoach == assistantCoach));
+
 
         context.close();
 
