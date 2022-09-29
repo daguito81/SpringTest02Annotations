@@ -41,7 +41,7 @@ public class TennisCoach implements Coach {
     private WorkoutService workoutService;
 
     @Autowired // Constructor Injector
-    public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+    public TennisCoach(@Qualifier("textFortuneService") FortuneService theFortuneService) {
         this.fortuneService = theFortuneService;
     }
 
